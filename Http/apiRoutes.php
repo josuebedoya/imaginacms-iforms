@@ -3,7 +3,7 @@
 use Illuminate\Routing\Router;
 
 $router->group(['prefix' =>'/iform/v4'], function (Router $router) {
-    
+
 
     $router->apiCrud([
       'module' => 'iforms',
@@ -33,7 +33,7 @@ $router->group(['prefix' =>'/iform/v4'], function (Router $router) {
         [
           'method' => 'post', // get,post,put....
           'path' => '/updateOrders', // Route Path
-          'uses' => 'FieldApiController@batchUpdate' //Name of the controller method to use
+          'uses' => 'batchUpdate' //Name of the controller method to use
         ]
       ]
     ]);

@@ -4,6 +4,7 @@ namespace Modules\Iforms\Http\Controllers\Api;
 
 use Modules\Core\Icrud\Controllers\BaseCrudController;
 //Model
+use Illuminate\Http\Request;
 use Modules\Iforms\Entities\Field;
 use Modules\Iforms\Repositories\FieldRepository;
 
@@ -27,7 +28,7 @@ class FieldApiController extends BaseCrudController
       $data = $request->input('attributes');
 
       //Update data
-      $newData = $this->resource->updateOrders($data);
+      $newData = $this->modelRepository->updateOrders($data);
       //Response
       $response = ['data' => 'updated items'];
       \DB::commit(); //Commit to Data Base
@@ -39,5 +40,5 @@ class FieldApiController extends BaseCrudController
     return response()->json($response, $status ?? 200);
 
   }
-  
+
 }
