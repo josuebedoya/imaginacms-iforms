@@ -222,7 +222,7 @@ $fields = $form->fields;
               @endif
               @endif
               @php
-                $options = $field->options->fieldOptions ?? json_decode($field->selectable)
+                $options = $field->options['fieldOptions'] ?? json_decode($field->selectable)
               @endphp
               <select
                 {{ $field->present()->type['value']=='selectmultiple'?'multiple':'' }} class="form-control bg-transparent {{ isset($fieldsParams[$field->name]) ? ($fieldsParams[$field->name]['class'] ?? '') :'' }} {{ !empty($field->prefix) ? !empty($field->prefix->value) ? 'border-left-0' : '' : '' }} {{ !empty($field->suffix) ? !empty($field->suffix->value) ? 'border-right-0' : '' : '' }}"
@@ -261,7 +261,7 @@ $fields = $form->fields;
         @break
         @case('radio')
         @php
-          $options = $field->options->fieldOptions ?? json_decode($field->selectable)
+          $options = $field->options['fieldOptions'] ?? json_decode($field->selectable)
         @endphp
         @foreach($options as $option)
           <label>
