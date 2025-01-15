@@ -4,6 +4,7 @@ namespace Modules\Iforms\Repositories\Eloquent;
 
 use Modules\Iforms\Repositories\FormRepository;
 use Modules\Core\Icrud\Repositories\Eloquent\EloquentCrudRepository;
+use Illuminate\Support\Arr;
 
 class EloquentFormRepository extends EloquentCrudRepository implements FormRepository
 {
@@ -122,7 +123,7 @@ class EloquentFormRepository extends EloquentCrudRepository implements FormRepos
     $model = $this->model->create($data);
 
     if($model) {
-      $model->fields()->update(\Arr::get($data, 'fields', []));
+      $model->fields()->update(Arr::get($data, 'fields', []));
     }
 
     // Default sync model relations
