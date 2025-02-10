@@ -40,6 +40,8 @@ return [
     'date' => 'Fecha',
     'file' => 'Archivo',
     'treeSelect' => 'Tree Select',
+    'firstName' => 'Nombre',
+    'lastName' => 'Apellido',
   ],
   'formTypes' => [
     'normal' => 'Formulario normal',

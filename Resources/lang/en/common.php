@@ -39,6 +39,8 @@ return [
     'date' => 'Date',
     'file' => 'File',
     'treeSelect' => 'Tree Select',
+    'firstName' => 'First Name',
+    'lastName' => 'Last Name',
   ],
   'formTypes' => [
       'normal' => 'Normal Form',

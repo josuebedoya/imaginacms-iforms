@@ -23,6 +23,9 @@ class Type extends CrudStaticModel
   const TREE_SELECT = 13;
   const HIDDEN = 14;
 
+  const FIRST_NAME = 15;
+  const LAST_NAME = 16;
+
   public function __construct()
   {
     $this->records = [
@@ -96,9 +99,18 @@ class Type extends CrudStaticModel
         'name' => trans('iforms::common.types.hidden'),
         'value' => 'hidden'
       ],
+      self::FIRST_NAME => [
+        'id' => self::FIRST_NAME,
+        'name' => trans('iforms::common.types.firstName'),
+        'value' => 'text'
+      ],
+      self::LAST_NAME => [
+        'id' => self::LAST_NAME,
+        'name' => trans('iforms::common.types.lastName'),
+        'value' => 'text'
+      ],
     ];
   }
-
 
 
   /*
