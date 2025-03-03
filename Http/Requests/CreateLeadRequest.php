@@ -8,13 +8,6 @@ class CreateLeadRequest extends BaseFormRequest
 {
     public function rules()
     {
-        $captcha = setting('isite::activateCaptcha');
-        if ($captcha && $captcha == '1') {
-            return [
-                'g-recaptcha-response' => 'required|icaptcha',
-            ];
-        }
-
         return [];
     }
 
@@ -30,14 +23,16 @@ class CreateLeadRequest extends BaseFormRequest
 
     public function messages()
     {
-        return [
-            'g-recaptcha-response.required' => trans('iforms::common.messages.captcha_required'),
-            'g-recaptcha-response.icaptcha' => trans('iforms::common.messages.captcha_invalid'),
-        ];
+        return [];
     }
 
     public function translationMessages()
     {
         return [];
     }
+
+    public function getValidator(){
+        return $this->getValidatorInstance();
+    }
+    
 }

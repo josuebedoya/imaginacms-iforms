@@ -399,7 +399,7 @@ $fields = $form->fields;
         <label class="col-12 py-1 px-1 col-form-label">{{$field->label}}</label>
         <div class="col-12 py-1 px-1">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="input{{$field->name}}">
+            <input class="form-check-input" type="checkbox" id="input{{$field->name}}" name="{{$field->name}}">
             <label class="form-check-label" for="input{{$field->name}}">
               {{ $field->placeholder }}
             </label>

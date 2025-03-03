@@ -1,6 +1,3 @@
-<?php
-$fields = $form->fields;
-?>
 {{ csrf_field() }}
 <div class="form-group row mb-0">
   @foreach($fields as $field)
@@ -422,8 +419,8 @@ $fields = $form->fields;
         @default
         <div class="checkbox">
           <label>
-            <input name="{!!$field['name']!!}" type="checkbox"
-              {{$field->required?'required':''}}>{!!sprintf(trans('iforms::form.form.terms'),url($field->description))!!}
+            <input name="{!!$field['name']!!}" type="checkbox" {{$field->required?'required':''}}>
+            <span class="ml-2">{{ $field->placeholder }}</span>
           </label>
         </div>
       @endswitch

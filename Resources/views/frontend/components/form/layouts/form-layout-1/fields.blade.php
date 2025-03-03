@@ -1,6 +1,3 @@
-<?php
-$fields = $form->fields;
-?>
 {{ csrf_field() }}
 <div class="form-group row">
   @foreach($fields as $index => $field)
@@ -192,7 +189,7 @@ $fields = $form->fields;
         <label class="py-1 px-0 col-form-label">{{$field->label}}</label>
         <div class="input-frame">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="input{{$field->name}}"
+            <input class="form-check-input" type="checkbox" id="input{{$field->name}}" name="{{$field->name}}"
                    value="{{ isset($fieldsParams[$field->name]) ? ($fieldsParams[$field->name]['value'] ?? '') : '' }}"
                    @if(isset($fieldsParams[$field->name]) && isset($fieldsParams[$field->name]['readonly'])) readonly
                    @endif
